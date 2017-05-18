@@ -1,0 +1,115 @@
+---
+title: "Paper title"
+author: "Your Name"
+email: your.email@some.edu
+department: Your department
+address: Your address
+date: "12/05/2017"
+output:
+  pdf_document:
+    template: ccn_style.tex
+    fig_caption: true
+
+header-includes:
+  - \usepackage{hyperref}
+
+abstract: 
+  "The abstract should be identical to the text version submitted in the webform and should not exceed 1,500 characters, including spaces and any special characters. The abstract should thus be relatively short. Aim for 150 words. Max length is 200 words. Arbitrarily long German words are not encouraged. CCN has an interdisciplinary audience. Hence a good abstract should (a) give context about what the problem is and why it matters (b) give the contents and explain what was done and what was found (c) give a clear conclusion including what we learned and how it changes the way we think about the universe."
+
+keywords: put; your; keywords; here
+bibliography: ./ccn_style.bib
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+
+```
+
+# General Formatting Instructions
+
+The entire contribution of a short summary submission (including
+figures, references, and anything else) can be no longer than two
+pages. This short summary format is to be used for workshop and
+tutorial descriptions, symposia summaries, and publication-based
+presentation extended abstracts. Unlike submitted research papers,
+short summary submissions should _not_ begin with a separate
+abstract. Prior to the first section of the short summary, there
+should be the header __Keywords:__ followed by a list of
+descriptive keywords separated by semicolons, all in 9~point font, as
+shown above.
+
+The text of the paper should be formatted in two columns with an
+overall width of 7 inches (17.8 cm) and length of 9.25 inches (23.5
+cm), with 0.25 inches between the columns. Leave two line spaces
+between the last author listed and the text of the paper. The left
+margin should be 0.75 inches and the top margin should be 1 inch.
+__The right and bottom margins will depend on whether you use
+  U.S. letter or A4 paper, so you must be sure to measure the width of
+  the printed text.__ Use 10~point Modern with 12~point vertical
+spacing, unless otherwise specified.
+
+The title should be in 14~point, bold, and centered. The title should
+be formatted with initial caps (the first letter of content words
+capitalized and the rest lower case). Each author's name should appear
+on a separate line, 11~point bold, and centered, with the author's
+email address in parentheses. Under each author's name list the
+author's affiliation and postal address in ordinary 10~point type.
+
+Indent the first line of each paragraph by 1/8~inch (except for the
+first paragraph of a new section). Do not add extra vertical space
+between paragraphs.
+
+# First Level Headings
+
+First level headings should be in 12~point, initial caps, bold and
+centered. Leave one line space above the heading and 1/4~line space
+below the heading.
+
+
+## Second Level Headings
+
+Second level headings should be 11point, initial caps, bold, and
+flush left. Leave one line space above the heading and 1/4line
+space below the heading.
+
+
+### Third Level Headings
+
+Third level headings should be 10point, initial caps, bold, and flush
+left. Leave one line space above the heading, but no space after the
+heading.
+
+
+# Formalities, Footnotes, and Floats
+
+Use standard APA citation format. Citations within the text should
+include the author's last name and year. If the authors' names are
+included in the sentence, place only the year in parentheses, as in
+[-@NewellSimon1972a], but otherwise place the entire reference in
+parentheses with the authors and year separated by a comma
+[@NewellSimon1972a]. List multiple references alphabetically and
+separate them by commas
+[@ChalnickBillman1988a, @NewellSimon1972a]. Use the
+``et~al.'' construction only after listing all the authors to a
+publication in an earlier reference and for citations with four or
+more authors.
+
+`Rmarkdown` lets you generate figures in place. The default figure size can be set in the YAML front matter, but can also be set for each chunk of R code separately. To make sure they have enough space around them, use either `&nbsp` or LaTeX's `\newline`
+
+&nbsp;
+
+```{r plot test, echo=FALSE, fig.width=3.3, fig.height=3}
+library(ggplot2)
+mtcars$gear <- factor(mtcars$gear,levels=c(3,4,5),
+  	labels=c("3gears","4gears","5gears"))
+qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5), 
+   main="Distribution of Gas Milage", xlab="Miles Per Gallon", 
+   ylab="Density")
+```
+
+&nbsp;
+
+
+References are automatically placed at the end, but you need to provide a section header yourself:
+
+# Bibliography

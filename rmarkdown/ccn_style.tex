@@ -1,0 +1,65 @@
+% 
+% Annual CCN conference
+% Sample LaTeX Two-Page Summary -- Proceedings Format
+% based on the prior cognitive science style file
+
+% Original : Ashwin Ram (ashwin@cc.gatech.edu)       04/01/1994
+% Modified : Johanna Moore (jmoore@cs.pitt.edu)      03/17/1995
+% Modified : David Noelle (noelle@ucsd.edu)          03/15/1996
+% Modified : Pat Langley (langley@cs.stanford.edu)   01/26/1997
+% Latex2e corrections by Ramin Charles Nakisa        01/28/1997 
+% Modified : Tina Eliassi-Rad (eliassi@cs.wisc.edu)  01/31/1998
+% Modified : Trisha Yannuzzi (trisha@ircs.upenn.edu) 12/28/1999 (in process)
+% Modified : Mary Ellen Foster (M.E.Foster@ed.ac.uk) 12/11/2000
+% Modified : Ken Forbus                              01/23/2004
+% Modified : Eli M. Silk (esilk@pitt.edu)            05/24/2005
+% Modified : Niels Taatgen (taatgen@cmu.edu)        10/24/2006
+% Modified : David Noelle (dnoelle@ucmerced.edu)     11/19/2014
+% Modified : Konrad Kording (koerding@gmail.com) 2/15/2017
+
+%% Change "letterpaper" in the following line to "a4paper" if you must. 
+% Alternatively, just ignore that because who prints papers anymore?
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{ccn}
+\usepackage{pslatex}
+\usepackage{hyperref}
+\usepackage{apacite}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\graphicspath{../img/}
+
+% prevent hyphenation
+\righthyphenmin = 62
+\lefthyphenmin = 62
+
+
+\title{$title$}
+ 
+\author{{\large \bf $author$ ($email$)} \\
+  $department$\\
+$address$
+}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Abstract}
+{
+\bf
+$abstract$
+}
+\begin{quote}
+\small
+\textbf{Keywords:} 
+$keywords$
+\end{quote}
+
+$body$
+
+
+\end{document}
